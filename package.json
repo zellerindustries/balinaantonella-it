@@ -1,14 +1,24 @@
 {
-  "name": "minimaz-project",
+  "name": "balinaantonella-it",
   "version": "0.0.1",
   "license": "ISC",
   "type": "commonjs",
   "scripts": {
     "build": "npx mz b",
-    "start": "npx mz b && npx serve ./dist"
+    "start": "npx mz b && npx serve ./dist",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepare": "husky || true"
   },
   "devDependencies": {
-    "minimaz-cli": "latest",
+    "husky": "^9.1.7",
+    "prettier": "^3.9.6",
     "serve": "latest"
+  },
+  "dependencies": {
+    "minimaz-cli": "latest"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
   }
 }
