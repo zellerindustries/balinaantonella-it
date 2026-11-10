@@ -1,34 +1,26 @@
 {
-    "input": {
-        "dir": "./src",
-        "mapping": {
-            "pages": "",
-            "public": "",
-            "styles": ""
-        },
-        "externals": {
-            "node_modules/bootstrap-icons/font/fonts": "public/fonts"
-        },
-        "exclude": []
+  "input": {
+    "dir": "./src",
+    "mapping": {
+      "pages": "",
+      "public": ""
     },
-    "output": {
-        "dir": "./dist",
-        "replace": {
-            "../public/": "/public/",
-            "<link rel=\"stylesheet\" href=\"styles/bootstrap-icons.css\">": "",
-            "../public/fonts/bootstrap-icons.woff2": "/public/fonts/bootstrap-icons.woff2",
-            "../public/bootstrap-icons/font/fonts/bootstrap-icons.woff": "/public/fonts/bootstrap-icons.woff"
-        },
-        "css": {
-            "bundling": true,
-            "minify": true
-        },
-        "js": {
-            "bundling": true,
-            "minify": true
-        },
-        "html": {
-            "minify": true
-        }
+    "externals": {},
+    "exclude": ["sass"]
+  },
+  "output": {
+    "dir": "./dist",
+    "replace": {},
+    "css": {
+      "bundling": false,
+      "minify": false
+    },
+    "js": {
+      "bundling": false,
+      "minify": false
+    },
+    "html": {
+      "minify": true
     }
+  }
 }
