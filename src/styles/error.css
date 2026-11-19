@@ -1,0 +1,11 @@
+@layer components {
+  /* Status code on the error page: a large serif numeral in the accent colour.
+     A screen-reader label next to it carries the full "Errore 404". */
+  .error-code {
+    color: var(--color-accent);
+    font-family: var(--font-heading);
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1;
+  }
+}

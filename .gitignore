@@ -13,3 +13,8 @@ Thumbs.db
 desktop.ini
 
 .dev
+
+.superpowers/
+
+# Raw files sent by the client: never committed or built
+data/

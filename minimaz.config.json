@@ -3,24 +3,38 @@
     "dir": "./src",
     "mapping": {
       "pages": "",
-      "public": ""
+      "public": "",
+      "styles": ""
     },
-    "externals": {},
-    "exclude": ["sass"]
+    "externals": {
+      "./node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2": "fonts/bootstrap-icons.woff2"
+    },
+    "exclude": []
   },
   "output": {
     "dir": "./dist",
-    "replace": {},
+    "replace": {
+      "__SITE_URL__": "https://balinaantonella.it",
+      "__SITE_NAME__": "Antonella Balina",
+      "__ROBOTS__": "noindex,nofollow",
+      "__EMAIL__": "info@balinaantonella.it",
+      "__PHONE_DISPLAY__": "+39 379 24 09 307",
+      "__PHONE_TEL__": "+393792409307",
+      "__LINKEDIN_URL__": "https://www.linkedin.com/in/antonella-balina"
+    },
     "css": {
-      "bundling": false,
-      "minify": false
+      "bundling": true,
+      "minify": true
     },
     "js": {
-      "bundling": false,
-      "minify": false
+      "bundling": true,
+      "minify": true
     },
     "html": {
       "minify": true
     }
+  },
+  "serve": {
+    "port": 4175
   }
 }

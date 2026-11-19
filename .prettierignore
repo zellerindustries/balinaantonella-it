@@ -1,6 +1,4 @@
 dist/
 node_modules/
-_old/
-assets/
-src/public/assets/
-src/public/images/
+
+data/
