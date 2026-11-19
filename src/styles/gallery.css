@@ -1,0 +1,110 @@
+@layer components {
+  /* Gallery grid: one column on phones, two from 480px, three from 1024px.
+     Row gaps are wider than column gaps so each caption stays with its image. */
+  .gallery {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--spacing-2xl) var(--spacing-lg);
+    list-style: none;
+  }
+
+  @media (min-width: 480px) {
+    .gallery {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .gallery {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      column-gap: var(--spacing-xl);
+    }
+  }
+
+  /* One work: the image frame with its caption close underneath. */
+  .work {
+    display: grid;
+    gap: var(--spacing-sm);
+  }
+
+  /* Image frame: a bare button that clips the thumbnail, so the hover zoom
+     stays inside it. The stone tint shows while the image loads. Focus uses
+     the global accent outline, which overflow does not clip. */
+  .work-open {
+    display: block;
+    inline-size: 100%;
+    padding: 0;
+    border: 0;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    background-color: var(--color-surface);
+    color: inherit;
+    font: inherit;
+  }
+
+  /* The zoom cursor only appears once the lightbox script is active. */
+  .lightbox-ready .work-open {
+    cursor: zoom-in;
+  }
+
+  /* Thumbnail: uniform 4:5 crop whatever the photo's own ratio. */
+  .work-open img {
+    inline-size: 100%;
+    aspect-ratio: var(--ratio-work);
+    object-fit: cover;
+    transition: transform var(--transition-media);
+  }
+
+  /* Caption: title in the serif, then year and materials as quiet metadata. */
+  .work figcaption {
+    display: grid;
+    gap: var(--spacing-2xs);
+  }
+
+  /* Title underline is always drawn but transparent; hover and focus only
+     change its colour, so nothing shifts. */
+  .work strong {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-heading);
+    text-decoration-line: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.3em;
+    transition: text-decoration-color var(--transition-base);
+  }
+
+  .work span {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-ui);
+  }
+
+  /* Keyboard focus gets the same zoom and accent underline as hover. */
+  .work-open:focus-visible img {
+    transform: scale(var(--scale-media-hover));
+  }
+
+  .work:has(.work-open:focus-visible) strong {
+    text-decoration-color: var(--color-accent);
+  }
+
+  /* Pointer hover: a slight zoom inside the frame and the accent underline. */
+  @media (hover: hover) {
+    .work-open:hover img {
+      transform: scale(var(--scale-media-hover));
+    }
+
+    .work:has(.work-open:hover) strong {
+      text-decoration-color: var(--color-accent);
+    }
+  }
+
+  /* Forced colours drop the tint: give the frame a visible system border. */
+  @media (forced-colors: active) {
+    .work-open {
+      border: 1px solid ButtonText;
+    }
+  }
+}

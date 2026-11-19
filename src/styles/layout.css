@@ -1,0 +1,30 @@
+@layer layout {
+  /* Page frame: stone background, footer pushed to the bottom on short pages. */
+  body {
+    display: flex;
+    flex-direction: column;
+    min-block-size: 100dvh;
+    background-color: var(--color-bg);
+  }
+
+  /* Main column: centred at --max-width, with section-sized vertical rhythm.
+     minmax(0, 1fr) lets wide children (the gallery) shrink instead of overflowing.
+     Phones start closer to the header, under which the wrapped nav already
+     adds height, so the first work reaches the fold; from 480px the top
+     matches the section rhythm. */
+  main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    flex: 1;
+    align-content: start;
+    gap: var(--spacing-lg);
+    padding-block: var(--spacing-xl) var(--spacing-section);
+    padding-inline: var(--padding-page-inline);
+  }
+
+  @media (min-width: 480px) {
+    main {
+      padding-block-start: var(--spacing-section);
+    }
+  }
+}

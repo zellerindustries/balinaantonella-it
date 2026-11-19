@@ -1,0 +1,65 @@
+@layer components {
+  /* Curriculum section: generous space above each heading so Formazione,
+     Mostre and Premi read as separate chapters within the text column. */
+  .cv-section {
+    display: grid;
+    gap: var(--spacing-lg);
+    max-inline-size: var(--max-width-text);
+    padding-block-start: var(--spacing-2xl);
+  }
+
+  /* Timeline: entries between hairlines, one column on phones. */
+  .timeline {
+    list-style: none;
+    border-block-start: var(--border-hairline);
+  }
+
+  .timeline li {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--spacing-2xs);
+    padding-block: var(--spacing-lg);
+    border-block-end: var(--border-hairline);
+  }
+
+  /* From 480px the year takes the left column, baseline-aligned with the title. */
+  @media (min-width: 480px) {
+    .timeline li {
+      grid-template-columns: var(--column-aside) minmax(0, 1fr);
+      column-gap: var(--spacing-xl);
+      align-items: baseline;
+    }
+  }
+
+  /* Year: large, muted serif with even-width figures so years line up. */
+  .timeline time {
+    color: var(--color-text-muted);
+    font-family: var(--font-heading);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-regular);
+    font-variant-numeric: lining-nums tabular-nums;
+    line-height: var(--line-height-heading);
+  }
+
+  /* Entry: serif title, muted place, then the description a little apart. */
+  .timeline div {
+    display: grid;
+    gap: var(--spacing-2xs);
+  }
+
+  .timeline strong {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-heading);
+    text-wrap: balance;
+  }
+
+  .timeline span {
+    color: var(--color-text-muted);
+  }
+
+  .timeline p {
+    padding-block-start: var(--spacing-xs);
+  }
+}

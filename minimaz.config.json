@@ -3,21 +3,22 @@
     "dir": "./src",
     "mapping": {
       "pages": "",
-      "public": ""
+      "public": "",
+      "styles": ""
     },
     "externals": {},
-    "exclude": ["sass"]
+    "exclude": []
   },
   "output": {
     "dir": "./dist",
     "replace": {},
     "css": {
-      "bundling": false,
-      "minify": false
+      "bundling": true,
+      "minify": true
     },
     "js": {
-      "bundling": false,
-      "minify": false
+      "bundling": true,
+      "minify": true
     },
     "html": {
       "minify": true

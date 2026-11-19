@@ -1,0 +1,44 @@
+@layer components {
+  /* Curriculum bio: portrait above the text on phones, beside it from 768px.
+     The portrait column is capped so the photo never dominates the text, and
+     the whole block shares the text column width with the timeline below. */
+  .bio {
+    display: grid;
+    max-inline-size: var(--max-width-text);
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--spacing-xl);
+    align-items: start;
+  }
+
+  @media (min-width: 768px) {
+    .bio {
+      grid-template-columns: minmax(0, var(--portrait-max-width)) minmax(0, 1fr);
+      gap: var(--spacing-2xl);
+    }
+  }
+
+  /* Portrait: square crop on the stone tint, which shows while it loads. */
+  .bio-portrait {
+    max-inline-size: var(--portrait-max-width);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    background-color: var(--color-surface);
+  }
+
+  .bio-portrait img {
+    inline-size: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+
+  /* Bio text: paragraphs spaced as one block; the first one opens slightly larger. */
+  .bio-text {
+    display: grid;
+    gap: var(--spacing-md);
+  }
+
+  .bio-text p:first-child {
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-body);
+  }
+}

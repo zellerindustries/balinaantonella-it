@@ -1,0 +1,14 @@
+@import url('./styles/root.css');
+@import url('./styles/fonts.css');
+@import url('./styles/reset.css');
+@import url('./styles/typography.css');
+@import url('./styles/layout.css');
+@import url('./styles/header.css');
+@import url('./styles/footer.css');
+@import url('./styles/page-intro.css');
+@import url('./styles/gallery.css');
+@import url('./styles/bio.css');
+@import url('./styles/timeline.css');
+@import url('./styles/contacts.css');
+@import url('./styles/lightbox.css');
+@import url('./styles/accessibility.css');

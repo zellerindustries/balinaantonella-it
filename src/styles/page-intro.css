@@ -1,0 +1,9 @@
+@layer components {
+  /* Page intro: eyebrow, title and lead kept tight as one group, with extra
+     space below so the content that follows reads as a separate section. */
+  .page-intro {
+    display: grid;
+    gap: var(--spacing-md);
+    padding-block-end: var(--spacing-xl);
+  }
+}

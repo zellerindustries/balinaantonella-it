@@ -1,0 +1,10 @@
+@layer components {
+  /* Site footer: quiet copyright line under a full-width hairline. */
+  .site-footer {
+    padding-block: var(--spacing-xl);
+    padding-inline: var(--padding-page-inline);
+    border-block-start: var(--border-hairline);
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+  }
+}

@@ -1,0 +1,80 @@
+@layer components {
+  /* Site header: wordmark left, nav right; wraps to two rows on narrow screens.
+     The hairline runs full width while the content stays in the main column. */
+  .site-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-2xs) var(--spacing-xl);
+    padding-block: var(--spacing-md);
+    padding-inline: var(--padding-page-inline);
+    border-block-end: var(--border-hairline);
+  }
+
+  /* Wordmark: the artist's name set in the heading serif. */
+  .site-name {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: var(--touch-target);
+    font-family: var(--font-heading);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-medium);
+    letter-spacing: var(--letter-spacing-heading);
+    line-height: var(--line-height-ui);
+    text-decoration: none;
+  }
+
+  .site-header ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 var(--spacing-md);
+  }
+
+  /* Nav labels: small tracked uppercase with a 44px touch target. The underline
+     is always drawn but transparent, so hover and current only change colour. */
+  .site-header nav a {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: var(--touch-target);
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-ui);
+    letter-spacing: var(--letter-spacing-label);
+    text-transform: uppercase;
+    text-decoration-color: transparent;
+    text-underline-offset: 0.5em;
+  }
+
+  /* Current page: full-strength text with the accent underline. */
+  .site-header nav a[aria-current='page'] {
+    color: var(--color-text);
+    text-decoration-color: var(--color-accent);
+  }
+
+  @media (hover: hover) {
+    .site-header nav a:hover {
+      color: var(--color-text);
+      text-decoration-color: var(--color-accent);
+    }
+  }
+
+  /* Wider screens: more breathing room between header rows and nav items.
+     The tight 16px gap below 480px keeps all three links on one row at 320px. */
+  @media (min-width: 480px) {
+    .site-header ul {
+      column-gap: var(--spacing-lg);
+    }
+  }
+
+  @media (min-width: 768px) {
+    .site-header {
+      padding-block: var(--spacing-lg);
+    }
+
+    .site-header ul {
+      column-gap: var(--spacing-xl);
+    }
+  }
+}

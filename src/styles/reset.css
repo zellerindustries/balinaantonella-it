@@ -1,0 +1,23 @@
+/* Minimal reset: predictable box sizing and no default margins. */
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Media never overflows its container */
+  :where(img, svg, video, picture) {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Lists used for navigation and layout carry no bullets */
+  :where(ul, ol)[role='list'],
+  :where(nav ul) {
+    list-style: none;
+  }
+}

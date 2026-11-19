@@ -1,0 +1,216 @@
+@layer components {
+  /* Dialog: fills the viewport and stays transparent, so a click on the empty
+     area around the work lands on the dialog itself and the script can treat it
+     as a backdrop click. It scrolls only on very short screens, and the work
+     is centred with auto margins, which never push content out of reach.
+     Phones reserve a band top and bottom for the counter, close and prev and next
+     buttons; from 768px those sit at the sides, so the band shrinks.
+     The focus colour token is redefined here: the global :focus-visible rule
+     lives in the later utilities layer and would beat any outline rule written
+     in this layer, but it reads the token, so the light ring wins on the dark
+     backdrop. */
+  .lightbox {
+    --color-focus: var(--color-lightbox-focus);
+
+    inline-size: 100%;
+    block-size: 100%;
+    max-inline-size: none;
+    max-block-size: none;
+    padding: calc(var(--touch-target) + var(--spacing-md) * 2) var(--spacing-md);
+    border: 0;
+    background: transparent;
+    color: var(--color-lightbox-text);
+    overflow: auto;
+    overscroll-behavior: contain;
+    scrollbar-color: var(--color-lightbox-line) transparent;
+    scrollbar-width: thin;
+  }
+
+  .lightbox[open] {
+    display: flex;
+    animation: lightbox-in var(--transition-lightbox);
+  }
+
+  /* Backdrop: warm dark tint with a gentle blur of the page behind. */
+  .lightbox::backdrop {
+    background-color: var(--color-lightbox-backdrop);
+    backdrop-filter: blur(var(--blur-lightbox));
+    animation: lightbox-in var(--transition-lightbox);
+  }
+
+  /* The page behind the open dialog must not scroll. */
+  html:has(.lightbox[open]) {
+    overflow: hidden;
+  }
+
+  /* Work: image with its caption underneath, centred in the dialog. */
+  .lightbox figure {
+    display: grid;
+    justify-items: center;
+    gap: var(--spacing-md);
+    min-inline-size: 0;
+    max-inline-size: 100%;
+    margin: auto;
+    text-align: center;
+  }
+
+  /* Photo: scales down to the width and to the height left once the dialog
+     padding and the caption reserve are taken from the dynamic viewport, so
+     the whole caption stays on screen. It never drops below a floor that
+     keeps the work legible; under it the dialog scrolls instead. Auto sizes
+     override the width and height attributes, which only reserve the ratio. */
+  .lightbox img {
+    inline-size: auto;
+    block-size: auto;
+    max-inline-size: 100%;
+    max-block-size: max(
+      var(--lightbox-image-min-height),
+      calc(
+        100dvh - 2 * (var(--touch-target) + var(--spacing-md) * 2) - var(--lightbox-caption-reserve)
+      )
+    );
+    object-fit: contain;
+  }
+
+  /* Caption: serif title, then year and materials in the muted tone.
+     Long words may break so the text never widens the dialog. */
+  .lightbox figcaption {
+    display: grid;
+    gap: var(--spacing-2xs);
+    max-inline-size: var(--measure);
+    overflow-wrap: anywhere;
+  }
+
+  .lightbox figcaption strong {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-heading);
+    text-wrap: balance;
+  }
+
+  .lightbox figcaption span {
+    color: var(--color-lightbox-muted);
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-ui);
+  }
+
+  /* Counter: "2 / 6", quiet, top left; vertically centred on the close button. */
+  .lightbox-count {
+    position: fixed;
+    inset-block-start: var(--spacing-md);
+    inset-inline-start: var(--spacing-md);
+    display: grid;
+    align-items: center;
+    block-size: var(--touch-target);
+    color: var(--color-lightbox-muted);
+    font-size: var(--font-size-sm);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: var(--letter-spacing-label);
+  }
+
+  /* Controls: hairline circles that meet the 44px touch target. They are
+     fixed so they stay put if the dialog scrolls on a short screen. */
+  .lightbox-close,
+  .lightbox-prev,
+  .lightbox-next {
+    position: fixed;
+    display: grid;
+    place-items: center;
+    inline-size: var(--touch-target);
+    block-size: var(--touch-target);
+    border: 1px solid var(--color-lightbox-line);
+    border-radius: 50%;
+    background-color: transparent;
+    color: var(--color-lightbox-text);
+    font: inherit;
+    font-size: var(--font-size-md);
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color var(--transition-base);
+  }
+
+  .lightbox-close {
+    inset-block-start: var(--spacing-md);
+    inset-inline-end: var(--spacing-md);
+  }
+
+  /* Previous and next sit at the bottom corners on phones, where the photo
+     needs the full width, and move to the sides from 768px. */
+  .lightbox-prev,
+  .lightbox-next {
+    inset-block-end: var(--spacing-md);
+  }
+
+  .lightbox-prev {
+    inset-inline-start: var(--spacing-md);
+  }
+
+  .lightbox-next {
+    inset-inline-end: var(--spacing-md);
+  }
+
+  @media (min-width: 768px) {
+    .lightbox {
+      padding-block: var(--spacing-xl);
+      padding-inline: calc(var(--touch-target) * 2 + var(--spacing-xl));
+    }
+
+    .lightbox img {
+      max-block-size: max(
+        var(--lightbox-image-min-height),
+        calc(100dvh - 2 * var(--spacing-xl) - var(--lightbox-caption-reserve))
+      );
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+      inset-block-end: auto;
+      inset-block-start: calc(50% - var(--touch-target) / 2);
+    }
+  }
+
+  @media (hover: hover) {
+    .lightbox-close:hover,
+    .lightbox-prev:hover,
+    .lightbox-next:hover {
+      background-color: var(--color-lightbox-hover);
+    }
+  }
+
+  /* Pressed state: the same tint, so a tap answers at once. */
+  .lightbox-close:active,
+  .lightbox-prev:active,
+  .lightbox-next:active {
+    background-color: var(--color-lightbox-hover);
+  }
+
+  /* Fade in: opacity only. */
+  @keyframes lightbox-in {
+    from {
+      opacity: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .lightbox[open],
+    .lightbox::backdrop {
+      animation: none;
+    }
+
+    .lightbox-close,
+    .lightbox-prev,
+    .lightbox-next {
+      transition: none;
+    }
+  }
+
+  /* Forced colours drop backgrounds: keep the hairline circles visible. */
+  @media (forced-colors: active) {
+    .lightbox-close,
+    .lightbox-prev,
+    .lightbox-next {
+      border-color: ButtonText;
+    }
+  }
+}

@@ -1,0 +1,81 @@
+@layer components {
+  /* Contact list: refined rows between hairlines, in the text column. */
+  .contacts {
+    max-inline-size: var(--max-width-text);
+    list-style: none;
+    border-block-start: var(--border-hairline);
+  }
+
+  /* Row: label above the value on phones; label column left from 480px. */
+  .contact {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--spacing-2xs);
+    padding-block: var(--spacing-md);
+    border-block-end: var(--border-hairline);
+  }
+
+  @media (min-width: 480px) {
+    .contact {
+      grid-template-columns: var(--column-aside) minmax(0, 1fr);
+      column-gap: var(--spacing-xl);
+      align-items: baseline;
+    }
+  }
+
+  /* Label: small tracked capitals, muted, like the eyebrow and nav. */
+  .contact-label {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-ui);
+    letter-spacing: var(--letter-spacing-label);
+    text-transform: uppercase;
+  }
+
+  /* Value: the link itself, large serif with a 44px target. A faint hairline
+     underline at rest marks it as tappable on touch screens; hover and focus
+     warm it to the accent, so only its colour changes.
+     Long addresses break anywhere rather than overflow at 320px. */
+  .contact-value {
+    justify-self: start;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: var(--spacing-xs);
+    min-block-size: var(--touch-target);
+    padding-block: var(--spacing-xs);
+    font-family: var(--font-heading);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-heading);
+    letter-spacing: var(--letter-spacing-heading);
+    text-decoration-color: var(--color-border);
+    text-underline-offset: 0.2em;
+    overflow-wrap: anywhere;
+  }
+
+  .contact-value:focus-visible {
+    text-decoration-color: var(--color-accent);
+  }
+
+  @media (hover: hover) {
+    .contact-value:hover {
+      text-decoration-color: var(--color-accent);
+    }
+  }
+
+  /* Social profiles are secondary to email and phone: one step smaller. */
+  .contact.social .contact-value {
+    font-size: var(--font-size-md);
+  }
+
+  /* Placeholder marker inside a value: small and quiet so the row still reads. */
+  .contact-value small {
+    color: var(--color-text-muted);
+    font-family: var(--font-body);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-regular);
+    letter-spacing: normal;
+  }
+}
