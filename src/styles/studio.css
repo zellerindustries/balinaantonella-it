@@ -1,0 +1,36 @@
+@layer components {
+  /* Studio photos on the curriculum page: two columns on phones, so each
+     keeps a useful size, and four in a row where the text column allows it.
+     Crops are uniform 4:5 on the lilac surface tint, which shows while they load. */
+  .studio {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--spacing-lg) var(--spacing-md);
+    list-style: none;
+  }
+
+  @media (min-width: 1024px) {
+    .studio {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  .studio figure {
+    display: grid;
+    gap: var(--spacing-xs);
+  }
+
+  .studio img {
+    inline-size: 100%;
+    aspect-ratio: var(--ratio-work);
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    background-color: var(--color-surface);
+  }
+
+  .studio figcaption {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-ui);
+  }
+}

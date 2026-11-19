@@ -5,8 +5,16 @@ node_modules/
 
 .vscode
 
-.claude
+.claude/superpowers/
+.claude/worktrees/
 
 .DS_Store
 Thumbs.db
 desktop.ini
+
+.dev
+
+.superpowers/
+
+# Raw files sent by the client: never committed or built
+data/

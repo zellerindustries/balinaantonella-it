@@ -3,48 +3,281 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Antonella Balina | In arrivo</title>
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'"
+    />
+    <title>Antonella Balina | Opere</title>
 
     <meta
       name="description"
-      content="Il nuovo sito di Antonella Balina è in costruzione, torna presto per scoprirlo."
+      content="Antonella Balina, scultrice: una selezione delle sue opere, con titolo, anno e materiali."
     />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://balinaantonella.it/" />
+    <meta name="robots" content="__ROBOTS__" />
+    <link rel="canonical" href="__SITE_URL__/" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Antonella Balina | In arrivo" />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="og:site_name" content="__SITE_NAME__" />
+    <meta property="og:title" content="Antonella Balina | Opere" />
     <meta
       property="og:description"
-      content="Il nuovo sito di Antonella Balina è in costruzione, torna presto per scoprirlo."
+      content="Antonella Balina, scultrice: una selezione delle sue opere, con titolo, anno e materiali."
     />
-    <meta property="og:url" content="https://balinaantonella.it/" />
+    <meta property="og:url" content="__SITE_URL__/" />
+    <meta property="og:image" content="__SITE_URL__/assets/works/01-full.webp" />
 
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Antonella Balina | In arrivo" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Antonella Balina | Opere" />
     <meta
       name="twitter:description"
-      content="Il nuovo sito di Antonella Balina è in costruzione, torna presto per scoprirlo."
+      content="Antonella Balina, scultrice: una selezione delle sue opere, con titolo, anno e materiali."
     />
+    <meta name="twitter:image" content="__SITE_URL__/assets/works/01-full.webp" />
 
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "__SITE_NAME__",
+        "jobTitle": "Scultrice",
+        "url": "__SITE_URL__/",
+        "image": "__SITE_URL__/assets/portrait.webp",
+        "alumniOf": "Accademia di Belle Arti di Napoli",
+        "sameAs": ["__LINKEDIN_URL__"]
+      }
+    </script>
+
+    <meta name="theme-color" content="#f8f6fb" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link
+      rel="preload"
+      href="/fonts/figtree.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/fonts/besley.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <div>
-      <header>
-        <p class="eyebrow">In costruzione</p>
-        <h1>Il mio spazio web è in arrivo</h1>
-        <p class="subhead">
-          Sto configurando e aggiornando la prossima versione del mio angolo di web. Torna a dare
-          un'occhiata tra poco per scoprire tutti i dettagli.
+    <a class="skip-link" href="#main">Vai al contenuto</a>
+    <header class="site-header">
+      <a class="site-name" href="/">Antonella Balina</a>
+      <nav aria-label="Navigazione principale">
+        <ul>
+          <li>
+            <a href="/" aria-current="page"
+              ><i class="icon images" aria-hidden="true"></i><span>Opere</span></a
+            >
+          </li>
+          <li>
+            <a href="/curriculum.html"
+              ><i class="icon person" aria-hidden="true"></i><span>Curriculum</span></a
+            >
+          </li>
+          <li>
+            <a href="/contatti.html"
+              ><i class="icon envelope" aria-hidden="true"></i><span>Contatti</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main">
+      <header class="page-intro">
+        <p class="eyebrow">Scultura</p>
+        <h1>Opere</h1>
+        <p class="lead">
+          Forme trattenute, compressioni e strutture in equilibrio precario, in ceramica, marmo,
+          cemento e gomma di camera d'aria: una selezione di lavori dal 2023 al 2026.
         </p>
       </header>
 
-      <footer>
-        <p>&copy; 2026 Antonella Balina. Tutti i diritti riservati.</p>
-      </footer>
-    </div>
+      <ul class="gallery" role="list">
+        <li>
+          <figure class="work">
+            <button
+              type="button"
+              class="work-open"
+              aria-haspopup="dialog"
+              data-full="/assets/works/01-full.webp"
+              data-full-width="1600"
+              data-full-height="1067"
+              data-title="Punto fermo"
+              data-caption="2026 · cemento, ferro, gomma · 138×67×57 cm"
+            >
+              <img
+                src="/assets/works/01-thumb.webp"
+                alt="Punto fermo, scultura in cemento: un blocco si appoggia su una struttura intrecciata di gomma nera"
+                width="600"
+                height="400"
+              />
+            </button>
+            <figcaption>
+              <strong>Punto fermo</strong> <span>2026 · cemento, ferro, gomma · 138×67×57 cm</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="work">
+            <button
+              type="button"
+              class="work-open"
+              aria-haspopup="dialog"
+              data-full="/assets/works/02-full.webp"
+              data-full-width="594"
+              data-full-height="892"
+              data-title="Archivio domestico"
+              data-caption="2026 · rete metallica, ferro, gomma · 100×185×0,15 cm"
+            >
+              <img
+                src="/assets/works/02-thumb.webp"
+                alt="Archivio domestico, rete metallica su cui una decorazione barocca simmetrica è composta con strisce di gomma nera"
+                width="499"
+                height="750"
+                loading="lazy"
+              />
+            </button>
+            <figcaption>
+              <strong>Archivio domestico</strong>
+              <span>2026 · rete metallica, ferro, gomma · 100×185×0,15 cm</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="work">
+            <button
+              type="button"
+              class="work-open"
+              aria-haspopup="dialog"
+              data-full="/assets/works/03-full.webp"
+              data-full-width="1440"
+              data-full-height="1080"
+              data-title="Strozzatura"
+              data-caption="2024 · cemento e resina · 137×45×42 cm"
+            >
+              <img
+                src="/assets/works/03-thumb.webp"
+                alt="Strozzatura, scultura in cemento: un blocco cubico in bilico su una colonna, legati da una fascia nera, su una piastra di ferro arrugginito in un giardino"
+                width="600"
+                height="450"
+                loading="lazy"
+              />
+            </button>
+            <figcaption>
+              <strong>Strozzatura</strong> <span>2024 · cemento e resina · 137×45×42 cm</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="work">
+            <button
+              type="button"
+              class="work-open"
+              aria-haspopup="dialog"
+              data-full="/assets/works/04-full.webp"
+              data-full-width="1440"
+              data-full-height="720"
+              data-title="Cookies"
+              data-caption="2023 · Pietra della Majella · 66×40 cm"
+            >
+              <img
+                src="/assets/works/04-thumb.webp"
+                alt="Cookies, due grandi forme tonde in pietra, simili a focacce, su un vassoio di metallo con maniglie"
+                width="600"
+                height="300"
+                loading="lazy"
+              />
+            </button>
+            <figcaption>
+              <strong>Cookies</strong> <span>2023 · Pietra della Majella · 66×40 cm</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="work">
+            <button
+              type="button"
+              class="work-open"
+              aria-haspopup="dialog"
+              data-full="/assets/works/05-full.webp"
+              data-full-width="1149"
+              data-full-height="912"
+              data-title="Un caso infinito"
+              data-caption="2023 · marmo bianco maculato · 28×32×15 cm"
+            >
+              <img
+                src="/assets/works/05-thumb.webp"
+                alt="Un caso infinito, scultura in marmo bianco maculato dalla forma ondulata e aperta"
+                width="600"
+                height="476"
+                loading="lazy"
+              />
+            </button>
+            <figcaption>
+              <strong>Un caso infinito</strong>
+              <span>2023 · marmo bianco maculato · 28×32×15 cm</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="work">
+            <button
+              type="button"
+              class="work-open"
+              aria-haspopup="dialog"
+              data-full="/assets/works/06-full.webp"
+              data-full-width="688"
+              data-full-height="1532"
+              data-title="Limitare"
+              data-caption="2023 · terracotta e gomma"
+            >
+              <img
+                src="/assets/works/06-thumb.webp"
+                alt="Limitare, forma di terracotta stretta da nastri di gomma nera annodati"
+                width="337"
+                height="750"
+                loading="lazy"
+              />
+            </button>
+            <figcaption>
+              <strong>Limitare</strong> <span>2023 · terracotta e gomma</span>
+            </figcaption>
+          </figure>
+        </li>
+      </ul>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Antonella Balina. Tutti i diritti riservati.</p>
+    </footer>
+
+    <dialog id="lightbox" class="lightbox" aria-label="Opera ingrandita">
+      <button class="lightbox-close" type="button" aria-label="Chiudi">
+        <i class="icon x-lg" aria-hidden="true"></i>
+      </button>
+      <button class="lightbox-prev" type="button" aria-label="Opera precedente">
+        <i class="icon chevron-left" aria-hidden="true"></i>
+      </button>
+      <button class="lightbox-next" type="button" aria-label="Opera successiva">
+        <i class="icon chevron-right" aria-hidden="true"></i>
+      </button>
+      <p class="lightbox-count"></p>
+      <figure>
+        <img alt="" />
+        <figcaption aria-live="polite"></figcaption>
+      </figure>
+    </dialog>
+
+    <script type="module" src="/script.js"></script>
   </body>
 </html>

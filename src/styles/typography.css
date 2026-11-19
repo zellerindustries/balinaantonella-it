@@ -1,0 +1,90 @@
+@layer base {
+  /* Body text: Figtree on a fluid 16-18px size with a relaxed line height. */
+  body {
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-body);
+  }
+
+  /* Headings: Besley, tight tracking, balanced line breaks. */
+  :where(h1, h2) {
+    font-family: var(--font-heading);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-heading);
+    letter-spacing: var(--letter-spacing-heading);
+    text-wrap: balance;
+  }
+
+  h1 {
+    font-size: var(--font-size-2xl);
+  }
+
+  /* Signature detail: a short violet hairline under each page title. */
+  h1::after {
+    content: '';
+    display: block;
+    inline-size: var(--spacing-2xl);
+    block-size: 1px;
+    margin-block-start: var(--spacing-lg);
+    background-color: var(--color-accent);
+  }
+
+  h2 {
+    font-size: var(--font-size-xl);
+  }
+
+  /* Running text keeps a readable measure and avoids one-word last lines. */
+  p {
+    max-inline-size: var(--measure);
+    text-wrap: pretty;
+  }
+
+  /* Content links: quiet underline that warms to the accent on hover. */
+  a {
+    color: inherit;
+    text-decoration-line: underline;
+    text-decoration-color: var(--color-text-muted);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.25em;
+    transition:
+      color var(--transition-base),
+      text-decoration-color var(--transition-base);
+  }
+
+  @media (hover: hover) {
+    a:hover {
+      color: var(--color-accent);
+      text-decoration-color: var(--color-accent);
+    }
+  }
+
+  ::selection {
+    background-color: var(--color-selection);
+    color: var(--color-text);
+  }
+
+  /* Small uppercase label above a page title (e.g. "Errore 404"). */
+  .eyebrow {
+    color: var(--color-accent);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-ui);
+    letter-spacing: var(--letter-spacing-label);
+    text-transform: uppercase;
+  }
+
+  /* Introductory paragraph under a page title: body size on phones, so the
+     first work shows near the fold, one step larger from 480px. */
+  .lead {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-base);
+  }
+
+  @media (min-width: 480px) {
+    .lead {
+      font-size: var(--font-size-md);
+    }
+  }
+}

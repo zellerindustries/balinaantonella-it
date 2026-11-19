@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'"
+    />
+    <title>Pagina non trovata | Antonella Balina</title>
+
+    <meta name="description" content="La pagina cercata non esiste o è stata spostata." />
+    <meta name="robots" content="noindex, follow" />
+
+    <meta name="theme-color" content="#f8f6fb" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link
+      rel="preload"
+      href="/fonts/figtree.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/fonts/besley.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Vai al contenuto</a>
+    <header class="site-header">
+      <a class="site-name" href="/">Antonella Balina</a>
+      <nav aria-label="Navigazione principale">
+        <ul>
+          <li>
+            <a href="/"><i class="icon images" aria-hidden="true"></i><span>Opere</span></a>
+          </li>
+          <li>
+            <a href="/curriculum.html"
+              ><i class="icon person" aria-hidden="true"></i><span>Curriculum</span></a
+            >
+          </li>
+          <li>
+            <a href="/contatti.html"
+              ><i class="icon envelope" aria-hidden="true"></i><span>Contatti</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main">
+      <header class="page-intro">
+        <p class="error-code">
+          <span id="error-code" aria-hidden="true">404</span>
+          <span id="error-code-label" class="visually-hidden">Errore 404</span>
+        </p>
+        <h1 id="error-title">Pagina non trovata</h1>
+        <p id="error-description" class="lead">
+          La pagina che cerchi non esiste o è stata spostata. Le opere sono sempre a portata di
+          mano.
+        </p>
+      </header>
+      <p><a href="/">Torna alle opere</a></p>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Antonella Balina. Tutti i diritti riservati.</p>
+    </footer>
+
+    <script type="module" src="/error/script.js"></script>
+  </body>
+</html>
