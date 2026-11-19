@@ -1,13 +1,14 @@
 @layer components {
-  /* Site header: wordmark left, nav right; wraps to two rows on narrow screens.
-     The hairline runs full width while the content stays in the main column. */
+  /* Site header: the wordmark on its own row. The hairline runs full width
+     while the content stays in the main column. The nav inside it is a bar
+     fixed to the bottom of the screen on phones (see below), so a thumb
+     reaches it, and moves next to the wordmark from 768px. */
   .site-header {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     gap: var(--spacing-2xs) var(--spacing-xl);
-    padding-block: var(--spacing-md);
+    padding-block: var(--spacing-xs);
     padding-inline: var(--padding-page-inline);
     border-block-end: var(--border-hairline);
   }
@@ -25,56 +26,114 @@
     text-decoration: none;
   }
 
-  .site-header ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0 var(--spacing-md);
+  /* Phone bar: docked to the bottom edge, three equal items, icon over label.
+     The page keeps room for it (footer padding and scroll-padding), and the
+     lightbox dialog sits above it in the top layer. */
+  .site-header nav {
+    position: fixed;
+    inset-inline: 0;
+    inset-block-end: 0;
+    z-index: 10;
+    padding-block-end: env(safe-area-inset-bottom);
+    background-color: var(--color-bg);
+    border-block-start: var(--border-hairline);
   }
 
-  /* Nav labels: small tracked uppercase with a 44px touch target. The underline
-     is always drawn but transparent, so hover and current only change colour. */
+  .site-header ul {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  /* Bar item: a 2px top edge that turns accent for the current page, with the
+     icon above a small tracked uppercase label. Every item is at least as
+     tall as the bar token, well over the 44px touch target. */
   .site-header nav a {
-    display: inline-flex;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    min-block-size: var(--touch-target);
+    justify-content: center;
+    gap: var(--spacing-2xs);
+    min-block-size: var(--bottom-bar-height);
+    border-block-start: 2px solid transparent;
     color: var(--color-text-muted);
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-medium);
     line-height: var(--line-height-ui);
     letter-spacing: var(--letter-spacing-label);
+    text-decoration: none;
     text-transform: uppercase;
-    text-decoration-color: transparent;
-    text-underline-offset: 0.5em;
   }
 
-  /* Current page: full-strength text with the accent underline. */
+  .site-header nav .icon {
+    font-size: var(--font-size-md);
+  }
+
+  /* Current page: accent edge, a soft lilac wash and full-strength text. */
   .site-header nav a[aria-current='page'] {
+    border-block-start-color: var(--color-accent);
+    background-color: var(--color-accent-soft);
     color: var(--color-text);
-    text-decoration-color: var(--color-accent);
   }
 
   @media (hover: hover) {
     .site-header nav a:hover {
       color: var(--color-text);
-      text-decoration-color: var(--color-accent);
     }
   }
 
-  /* Wider screens: more breathing room between header rows and nav items.
-     The tight 16px gap below 480px keeps all three links on one row at 320px. */
-  @media (min-width: 480px) {
-    .site-header ul {
-      column-gap: var(--spacing-lg);
-    }
+  /* Focus must not hide behind the bar: reserve its height at the bottom. */
+  html {
+    scroll-padding-block-end: var(--bottom-bar-height);
   }
 
+  /* Wider screens: the usual top nav, text only. The icons are decorative
+     and only earn their space in the phone bar. The underline is always drawn
+     but transparent, so hover and current only change colour. */
   @media (min-width: 768px) {
     .site-header {
       padding-block: var(--spacing-lg);
     }
 
+    .site-header nav {
+      position: static;
+      padding-block-end: 0;
+      background-color: transparent;
+      border-block-start: 0;
+    }
+
     .site-header ul {
+      display: flex;
+      flex-wrap: wrap;
       column-gap: var(--spacing-xl);
+    }
+
+    .site-header nav a {
+      display: inline-flex;
+      flex-direction: row;
+      min-block-size: var(--touch-target);
+      border-block-start: 0;
+      text-decoration-line: underline;
+      text-decoration-color: transparent;
+      text-underline-offset: 0.5em;
+    }
+
+    .site-header nav .icon {
+      display: none;
+    }
+
+    .site-header nav a[aria-current='page'] {
+      background-color: transparent;
+      text-decoration-color: var(--color-accent);
+    }
+
+    @media (hover: hover) {
+      .site-header nav a:hover {
+        text-decoration-color: var(--color-accent);
+      }
+    }
+
+    html {
+      scroll-padding-block-end: 0;
     }
   }
 }

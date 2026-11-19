@@ -8,7 +8,10 @@
 @import url('./styles/page-intro.css');
 @import url('./styles/gallery.css');
 @import url('./styles/bio.css');
+@import url('./styles/studio.css');
 @import url('./styles/timeline.css');
 @import url('./styles/contacts.css');
+@import url('./styles/error.css');
+@import url('./styles/icons.css');
 @import url('./styles/lightbox.css');
 @import url('./styles/accessibility.css');

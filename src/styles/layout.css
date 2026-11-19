@@ -1,5 +1,5 @@
 @layer layout {
-  /* Page frame: stone background, footer pushed to the bottom on short pages. */
+  /* Page frame: lilac-white background, footer pushed to the bottom on short pages. */
   body {
     display: flex;
     flex-direction: column;
@@ -9,9 +9,8 @@
 
   /* Main column: centred at --max-width, with section-sized vertical rhythm.
      minmax(0, 1fr) lets wide children (the gallery) shrink instead of overflowing.
-     Phones start closer to the header, under which the wrapped nav already
-     adds height, so the first work reaches the fold; from 480px the top
-     matches the section rhythm. */
+     Phones start closer to the header so the first work reaches the fold;
+     from 480px the top matches the section rhythm. */
   main {
     display: grid;
     grid-template-columns: minmax(0, 1fr);

@@ -5,6 +5,12 @@
 /** Set on <html> once the script is active, so CSS only promises a zoom then. */
 const readyClass = 'lightbox-ready';
 
+/** Smallest horizontal finger drag, in CSS px, that counts as a swipe. */
+const swipeDistance = 50;
+
+/** How much longer a swipe must be sideways than vertically, so scrolling is not mistaken for it. */
+const swipeSlope = 1.5;
+
 /**
  * Opens the full image of a work in the #lightbox dialog.
  * Without JavaScript, or without the dialog markup, the thumbnails stay plain.
@@ -81,6 +87,26 @@ export function initLightbox(root: Document = document): void {
   });
   dialog.addEventListener('click', (event) => {
     if (event.target === dialog && pressedOnBackdrop) dialog.close();
+  });
+
+  // Swipe: a mostly horizontal finger drag steps through the works like the
+  // arrow keys (left for the next work, right for the previous). Only touch
+  // pointers count, and a mostly vertical drag is left to scroll the dialog.
+  let swipeStart: { x: number; y: number } | null = null;
+  dialog.addEventListener('pointerdown', (event) => {
+    swipeStart = event.pointerType === 'touch' ? { x: event.clientX, y: event.clientY } : null;
+  });
+  dialog.addEventListener('pointercancel', () => {
+    swipeStart = null;
+  });
+  dialog.addEventListener('pointerup', (event) => {
+    if (!swipeStart) return;
+    const deltaX = event.clientX - swipeStart.x;
+    const deltaY = event.clientY - swipeStart.y;
+    swipeStart = null;
+    if (Math.abs(deltaX) < swipeDistance || Math.abs(deltaX) < Math.abs(deltaY) * swipeSlope)
+      return;
+    show(current + (deltaX < 0 ? 1 : -1));
   });
 
   // Arrow keys step through the works. Esc is handled natively by the dialog.

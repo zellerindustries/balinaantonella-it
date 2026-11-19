@@ -13,19 +13,19 @@
       name="description"
       content="Come contattare la scultrice Antonella Balina: email, telefono e profili social."
     />
-    <meta name="robots" content="noindex" />
-    <link rel="canonical" href="https://balinaantonella.it/contatti.html" />
+    <meta name="robots" content="__ROBOTS__" />
+    <link rel="canonical" href="__SITE_URL__/contatti.html" />
 
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="it_IT" />
-    <meta property="og:site_name" content="Antonella Balina" />
+    <meta property="og:site_name" content="__SITE_NAME__" />
     <meta property="og:title" content="Antonella Balina | Contatti" />
     <meta
       property="og:description"
       content="Come contattare la scultrice Antonella Balina: email, telefono e profili social."
     />
-    <meta property="og:url" content="https://balinaantonella.it/contatti.html" />
-    <meta property="og:image" content="https://balinaantonella.it/assets/works/01-full.webp" />
+    <meta property="og:url" content="__SITE_URL__/contatti.html" />
+    <meta property="og:image" content="__SITE_URL__/assets/works/01-full.webp" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Antonella Balina | Contatti" />
@@ -33,8 +33,9 @@
       name="twitter:description"
       content="Come contattare la scultrice Antonella Balina: email, telefono e profili social."
     />
-    <meta name="twitter:image" content="https://balinaantonella.it/assets/works/01-full.webp" />
+    <meta name="twitter:image" content="__SITE_URL__/assets/works/01-full.webp" />
 
+    <meta name="theme-color" content="#f8f6fb" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/favicon.ico" sizes="48x48" />
     <link
@@ -59,9 +60,19 @@
       <a class="site-name" href="/">Antonella Balina</a>
       <nav aria-label="Navigazione principale">
         <ul>
-          <li><a href="/">Opere</a></li>
-          <li><a href="/curriculum.html">Curriculum</a></li>
-          <li><a href="/contatti.html" aria-current="page">Contatti</a></li>
+          <li>
+            <a href="/"><i class="icon images" aria-hidden="true"></i><span>Opere</span></a>
+          </li>
+          <li>
+            <a href="/curriculum.html"
+              ><i class="icon person" aria-hidden="true"></i><span>Curriculum</span></a
+            >
+          </li>
+          <li>
+            <a href="/contatti.html" aria-current="page"
+              ><i class="icon envelope" aria-hidden="true"></i><span>Contatti</span></a
+            >
+          </li>
         </ul>
       </nav>
     </header>
@@ -72,36 +83,26 @@
         <h1>Contatti</h1>
         <p class="lead">
           Per commissioni, mostre o una visita allo studio, scrivi o chiama: rispondo di persona.
-          [PLACEHOLDER]
         </p>
       </header>
 
       <ul class="contacts" role="list">
         <li class="contact">
-          <span class="contact-label">Email</span>
-          <a class="contact-value" href="mailto:info@example.it"
-            >info@example.it <small>[PLACEHOLDER]</small></a
-          >
+          <span class="contact-label"><i class="icon envelope" aria-hidden="true"></i>Email</span>
+          <a class="contact-value" href="mailto:__EMAIL__">__EMAIL__</a>
         </li>
         <li class="contact">
-          <span class="contact-label">Telefono</span>
-          <a class="contact-value" href="tel:+390000000000"
-            >+39 000 000 0000 <small>[PLACEHOLDER]</small></a
+          <span class="contact-label"
+            ><i class="icon telephone" aria-hidden="true"></i>Telefono</span
           >
+          <a class="contact-value" href="tel:__PHONE_TEL__">__PHONE_DISPLAY__</a>
         </li>
         <li class="contact social">
-          <span class="contact-label">Instagram</span>
-          <a
-            class="contact-value"
-            href="https://www.instagram.com/example"
-            rel="noopener noreferrer"
-            >@example <small>[PLACEHOLDER]</small></a
+          <span class="contact-label"
+            ><i class="icon linkedin" aria-hidden="true"></i>LinkedIn</span
           >
-        </li>
-        <li class="contact social">
-          <span class="contact-label">Facebook</span>
-          <a class="contact-value" href="https://www.facebook.com/example" rel="noopener noreferrer"
-            >Antonella Balina <small>[PLACEHOLDER]</small></a
+          <a class="contact-value" href="__LINKEDIN_URL__" rel="noopener noreferrer"
+            >Antonella Balina</a
           >
         </li>
       </ul>

@@ -1,6 +1,6 @@
 @layer components {
   /* Curriculum section: generous space above each heading so Formazione,
-     Mostre and Premi read as separate chapters within the text column. */
+     Mostre and Residenze read as separate chapters within the text column. */
   .cv-section {
     display: grid;
     gap: var(--spacing-lg);

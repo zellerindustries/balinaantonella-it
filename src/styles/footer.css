@@ -1,10 +1,17 @@
 @layer components {
   /* Site footer: quiet copyright line under a full-width hairline. */
   .site-footer {
-    padding-block: var(--spacing-xl);
+    padding-block: var(--spacing-xl) calc(var(--spacing-xl) + var(--bottom-bar-height));
     padding-inline: var(--padding-page-inline);
     border-block-start: var(--border-hairline);
     color: var(--color-text-muted);
     font-size: var(--font-size-sm);
+  }
+
+  /* From 768px the nav is back in the header, so the footer needs no extra room. */
+  @media (min-width: 768px) {
+    .site-footer {
+      padding-block-end: var(--spacing-xl);
+    }
   }
 }

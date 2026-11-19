@@ -25,6 +25,9 @@
 
   /* Label: small tracked capitals, muted, like the eyebrow and nav. */
   .contact-label {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
     color: var(--color-text-muted);
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-medium);
@@ -68,14 +71,5 @@
   /* Social profiles are secondary to email and phone: one step smaller. */
   .contact.social .contact-value {
     font-size: var(--font-size-md);
-  }
-
-  /* Placeholder marker inside a value: small and quiet so the row still reads. */
-  .contact-value small {
-    color: var(--color-text-muted);
-    font-family: var(--font-body);
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-regular);
-    letter-spacing: normal;
   }
 }

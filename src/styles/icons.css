@@ -1,0 +1,60 @@
+/* Bootstrap Icons font. The file is copied from node_modules to /fonts by
+   `input.externals` in minimaz.config.json. `block` keeps a glyph invisible
+   rather than showing a fallback character while the font loads. */
+@font-face {
+  font-family: 'bootstrap-icons';
+  src: url('/fonts/bootstrap-icons.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+}
+
+@layer components {
+  /* Icon: an empty <i class="icon name" aria-hidden="true"> that draws one
+     glyph through ::before. Decorative only: the text or aria-label next to it
+     carries the meaning. Sized in em so it follows the surrounding font size. */
+  .icon::before {
+    display: inline-block;
+    font-family: var(--font-icons);
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    line-height: 1;
+    text-transform: none;
+    vertical-align: -0.125em;
+  }
+
+  /* One rule per icon in use. Codepoints come from
+     node_modules/bootstrap-icons/font/bootstrap-icons.json (decimal there). */
+  .icon.images::before {
+    content: '\f42b';
+  }
+
+  .icon.person::before {
+    content: '\f4e1';
+  }
+
+  .icon.envelope::before {
+    content: '\f32f';
+  }
+
+  .icon.telephone::before {
+    content: '\f5c1';
+  }
+
+  .icon.linkedin::before {
+    content: '\f472';
+  }
+
+  .icon.x-lg::before {
+    content: '\f659';
+  }
+
+  .icon.chevron-left::before {
+    content: '\f284';
+  }
+
+  .icon.chevron-right::before {
+    content: '\f285';
+  }
+}

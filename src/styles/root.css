@@ -5,20 +5,25 @@
 :root {
   color-scheme: light;
 
-  /* Colours: warm stone neutrals, one terracotta accent used sparingly.
-     Contrast on --color-bg: text 14.7:1, muted 6.2:1, accent 5.6:1 (AA). */
-  --color-bg: #f6f2ec;
-  --color-surface: #ece5da;
-  --color-text: #231f1b;
-  --color-text-muted: #62594f;
-  --color-border: #d8cfc2;
-  --color-accent: #9a4a2c;
+  /* Colours: lilac-tinted neutrals and one violet accent used sparingly, all
+     plain sRGB hex. The accent is rebeccapurple, a web-safe violet. A lighter
+     lilac (--color-accent-soft) marks the current page in the phone nav bar.
+     Contrast on --color-bg: text 15.8:1, muted 7.0:1, accent 7.8:1 (AA, and
+     AAA for text). Muted text on --color-surface is 6.2:1. */
+  --color-bg: #f8f6fb;
+  --color-surface: #ede8f5;
+  --color-text: #1f1a29;
+  --color-text-muted: #5a5169;
+  --color-border: #d9d0e6;
+  --color-accent: #663399;
+  --color-accent-soft: #e4d9f4;
   --color-focus: var(--color-accent);
   --color-selection: color-mix(in srgb, var(--color-accent) 18%, var(--color-bg));
 
   /* Font families, with similar system fallbacks to limit layout shift */
   --font-body: 'Figtree', system-ui, -apple-system, 'Segoe UI', roboto, sans-serif;
   --font-heading: 'Besley', georgia, 'Times New Roman', serif;
+  --font-icons: 'bootstrap-icons';
 
   /* Fluid type scale (rem, so it follows the user's font size) */
   --font-size-sm: 0.875rem;
@@ -57,12 +62,14 @@
   --measure: 65ch;
   --padding-page-inline: max(var(--spacing-gutter), calc((100% - var(--max-width)) / 2));
   --touch-target: 2.75rem;
+  --bottom-bar-height: 3.5rem;
 
   /* Text-led pages (curriculum, contacts): narrower column than the gallery,
      a left column for timeline years and contact labels, and the bio portrait */
   --max-width-text: 52rem;
   --column-aside: 8rem;
   --portrait-max-width: 20rem;
+  --portrait-max-width-narrow: 14rem;
 
   /* Shape and lines */
   --radius-sm: 2px;
@@ -75,17 +82,18 @@
   /* Motion: UI state changes, and the slower, subtler thumbnail zoom */
   --transition-base: 200ms cubic-bezier(0.2, 0, 0, 1);
   --transition-media: 350ms cubic-bezier(0.2, 0, 0, 1);
+  --opacity-pressed: 0.85;
   --scale-media-hover: 1.03;
 
-  /* Lightbox: a dark warm-neutral room around the work, so the photo is what
+  /* Lightbox: a deep violet-black room around the work, so the photo is what
      glows. Worst case, with the lightest page colour behind the 94% backdrop
-     (it composites to rgb(41 37 34)): text 13.6:1, muted 7.9:1, focus 7.5:1. */
-  --color-lightbox-backdrop: rgb(28 24 21 / 0.94);
+     (it composites to rgb(39 34 49)): text 14.4:1, muted 8.8:1, focus 8.4:1. */
+  --color-lightbox-backdrop: rgb(26 20 36 / 0.94);
   --color-lightbox-text: var(--color-bg);
-  --color-lightbox-muted: #c4b9aa;
-  --color-lightbox-line: rgb(246 242 236 / 0.35);
-  --color-lightbox-hover: rgb(246 242 236 / 0.12);
-  --color-lightbox-focus: #e5a98d;
+  --color-lightbox-muted: #c9bfd9;
+  --color-lightbox-line: rgb(248 246 251 / 0.35);
+  --color-lightbox-hover: rgb(248 246 251 / 0.12);
+  --color-lightbox-focus: #cdb4f0;
   --blur-lightbox: 6px;
   /* Height kept free under the photo for the caption: a two-line title, the
      year and materials line, and the gap above them. */
@@ -102,7 +110,7 @@
 /* Stronger lines and secondary text when the user asks for more contrast */
 @media (prefers-contrast: more) {
   :root {
-    --color-text-muted: #3f3831;
-    --color-border: #8a8075;
+    --color-text-muted: #3d3548;
+    --color-border: #857a96;
   }
 }

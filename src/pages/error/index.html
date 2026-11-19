@@ -7,23 +7,12 @@
       http-equiv="Content-Security-Policy"
       content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'"
     />
-    <title>Antonella Balina | Pagina non trovata</title>
+    <title>Pagina non trovata | Antonella Balina</title>
 
     <meta name="description" content="La pagina cercata non esiste o è stata spostata." />
-    <meta name="robots" content="noindex" />
+    <meta name="robots" content="noindex, follow" />
 
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="it_IT" />
-    <meta property="og:site_name" content="Antonella Balina" />
-    <meta property="og:title" content="Antonella Balina | Pagina non trovata" />
-    <meta property="og:description" content="La pagina cercata non esiste o è stata spostata." />
-    <meta property="og:image" content="https://balinaantonella.it/assets/works/01-full.webp" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Antonella Balina | Pagina non trovata" />
-    <meta name="twitter:description" content="La pagina cercata non esiste o è stata spostata." />
-    <meta name="twitter:image" content="https://balinaantonella.it/assets/works/01-full.webp" />
-
+    <meta name="theme-color" content="#f8f6fb" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/favicon.ico" sizes="48x48" />
     <link
@@ -48,18 +37,31 @@
       <a class="site-name" href="/">Antonella Balina</a>
       <nav aria-label="Navigazione principale">
         <ul>
-          <li><a href="/">Opere</a></li>
-          <li><a href="/curriculum.html">Curriculum</a></li>
-          <li><a href="/contatti.html">Contatti</a></li>
+          <li>
+            <a href="/"><i class="icon images" aria-hidden="true"></i><span>Opere</span></a>
+          </li>
+          <li>
+            <a href="/curriculum.html"
+              ><i class="icon person" aria-hidden="true"></i><span>Curriculum</span></a
+            >
+          </li>
+          <li>
+            <a href="/contatti.html"
+              ><i class="icon envelope" aria-hidden="true"></i><span>Contatti</span></a
+            >
+          </li>
         </ul>
       </nav>
     </header>
 
     <main id="main">
       <header class="page-intro">
-        <p class="eyebrow">Errore 404</p>
-        <h1>Pagina non trovata</h1>
-        <p class="lead">
+        <p class="error-code">
+          <span id="error-code" aria-hidden="true">404</span>
+          <span id="error-code-label" class="visually-hidden">Errore 404</span>
+        </p>
+        <h1 id="error-title">Pagina non trovata</h1>
+        <p id="error-description" class="lead">
           La pagina che cerchi non esiste o è stata spostata. Le opere sono sempre a portata di
           mano.
         </p>
@@ -70,5 +72,7 @@
     <footer class="site-footer">
       <p>&copy; 2026 Antonella Balina. Tutti i diritti riservati.</p>
     </footer>
+
+    <script type="module" src="/error/script.js"></script>
   </body>
 </html>

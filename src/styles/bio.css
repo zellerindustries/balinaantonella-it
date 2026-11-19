@@ -17,17 +17,25 @@
     }
   }
 
-  /* Portrait: square crop on the stone tint, which shows while it loads. */
+  /* Portrait: 4:5 crop on the lilac surface tint, which shows while it loads. It is
+     kept small on phones so the first lines of the bio show on the first
+     screen, and widens to the full column from 768px. */
   .bio-portrait {
-    max-inline-size: var(--portrait-max-width);
+    max-inline-size: var(--portrait-max-width-narrow);
     border-radius: var(--radius-sm);
     overflow: hidden;
     background-color: var(--color-surface);
   }
 
+  @media (min-width: 768px) {
+    .bio-portrait {
+      max-inline-size: var(--portrait-max-width);
+    }
+  }
+
   .bio-portrait img {
     inline-size: 100%;
-    aspect-ratio: 1;
+    aspect-ratio: var(--ratio-work);
     object-fit: cover;
   }
 

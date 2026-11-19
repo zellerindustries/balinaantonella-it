@@ -21,7 +21,7 @@
     font-size: var(--font-size-2xl);
   }
 
-  /* Signature detail: a short terracotta hairline under each page title. */
+  /* Signature detail: a short violet hairline under each page title. */
   h1::after {
     content: '';
     display: block;

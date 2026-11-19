@@ -11,30 +11,31 @@
 
     <meta
       name="description"
-      content="Antonella Balina, scultrice: biografia, formazione, mostre e premi."
+      content="Antonella Balina, scultrice: biografia, formazione, mostre e residenze."
     />
-    <meta name="robots" content="noindex" />
-    <link rel="canonical" href="https://balinaantonella.it/curriculum.html" />
+    <meta name="robots" content="__ROBOTS__" />
+    <link rel="canonical" href="__SITE_URL__/curriculum.html" />
 
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="it_IT" />
-    <meta property="og:site_name" content="Antonella Balina" />
+    <meta property="og:site_name" content="__SITE_NAME__" />
     <meta property="og:title" content="Antonella Balina | Curriculum" />
     <meta
       property="og:description"
-      content="Antonella Balina, scultrice: biografia, formazione, mostre e premi."
+      content="Antonella Balina, scultrice: biografia, formazione, mostre e residenze."
     />
-    <meta property="og:url" content="https://balinaantonella.it/curriculum.html" />
-    <meta property="og:image" content="https://balinaantonella.it/assets/works/01-full.webp" />
+    <meta property="og:url" content="__SITE_URL__/curriculum.html" />
+    <meta property="og:image" content="__SITE_URL__/assets/works/01-full.webp" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Antonella Balina | Curriculum" />
     <meta
       name="twitter:description"
-      content="Antonella Balina, scultrice: biografia, formazione, mostre e premi."
+      content="Antonella Balina, scultrice: biografia, formazione, mostre e residenze."
     />
-    <meta name="twitter:image" content="https://balinaantonella.it/assets/works/01-full.webp" />
+    <meta name="twitter:image" content="__SITE_URL__/assets/works/01-full.webp" />
 
+    <meta name="theme-color" content="#f8f6fb" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/favicon.ico" sizes="48x48" />
     <link
@@ -59,9 +60,19 @@
       <a class="site-name" href="/">Antonella Balina</a>
       <nav aria-label="Navigazione principale">
         <ul>
-          <li><a href="/">Opere</a></li>
-          <li><a href="/curriculum.html" aria-current="page">Curriculum</a></li>
-          <li><a href="/contatti.html">Contatti</a></li>
+          <li>
+            <a href="/"><i class="icon images" aria-hidden="true"></i><span>Opere</span></a>
+          </li>
+          <li>
+            <a href="/curriculum.html" aria-current="page"
+              ><i class="icon person" aria-hidden="true"></i><span>Curriculum</span></a
+            >
+          </li>
+          <li>
+            <a href="/contatti.html"
+              ><i class="icon envelope" aria-hidden="true"></i><span>Contatti</span></a
+            >
+          </li>
         </ul>
       </nav>
     </header>
@@ -75,119 +86,165 @@
       <section class="bio" aria-label="Biografia">
         <figure class="bio-portrait">
           <img
-            src="/assets/portrait-placeholder.webp"
-            alt="[PLACEHOLDER] Ritratto di Antonella Balina nel suo studio"
-            width="720"
-            height="720"
+            src="/assets/portrait.webp"
+            alt="Antonella Balina modella l'argilla nel suo laboratorio"
+            width="900"
+            height="1200"
           />
         </figure>
         <div class="bio-text">
           <p>
-            Antonella Balina è una scultrice italiana. Lavora il marmo, il bronzo, la terracotta e
-            il legno, cercando nella materia il punto in cui una forma smette di essere pietra e
-            diventa presenza. [PLACEHOLDER]
+            Antonella Balina (2003) è una scultrice. La sua pratica unisce ricerca materica,
+            indagine sulla condizione umana e riflessione sulle dinamiche della memoria collettiva:
+            la materia diventa un dispositivo narrativo capace di dare forma a tensioni sociali,
+            pressioni collettive e dinamiche interiori.
           </p>
           <p>
-            Dopo la formazione all'Accademia di Belle Arti, ha aperto il suo studio, dove alterna
-            opere di grande formato e piccoli studi dal vero. Espone in Italia dal 2019 in mostre
-            personali e collettive. [PLACEHOLDER]
+            Le sue opere, fatte di forme «trattenute», compressioni e strutture in equilibrio
+            precario, interrogano il rapporto tra individuo e comunità. Usa ceramica, marmo e
+            resina, insieme a materiali industriali e di recupero come ferro, cemento e gomma
+            ricavata da camere d'aria.
+          </p>
+          <p>
+            Nella ricerca più recente la durezza della materia industriale incontra i linguaggi
+            lenti della tradizione domestica e del lavoro manuale femminile, come l'uncinetto, il
+            ricamo e il cucito: una continua negoziazione tra peso, adattamento e permanenza.
           </p>
         </div>
+      </section>
+
+      <section class="cv-section" aria-labelledby="studio">
+        <h2 id="studio">Materiali e lavoro in studio</h2>
+        <ul class="studio" role="list">
+          <li>
+            <figure>
+              <img
+                src="/assets/studio-01.webp"
+                alt="Un nastro di gomma ricavato da una camera d'aria, arrotolato sopra un intreccio di gomma"
+                width="800"
+                height="1067"
+                loading="lazy"
+              />
+              <figcaption>Nastro di gomma da camera d'aria</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <img
+                src="/assets/studio-02.webp"
+                alt="Cinque rotoli di nastro di gomma neri visti dall'alto"
+                width="800"
+                height="1067"
+                loading="lazy"
+              />
+              <figcaption>Rotoli di nastro pronti da intrecciare</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <img
+                src="/assets/studio-03.webp"
+                alt="Una mano con il guanto da lavoro regge un uncinetto sopra un intreccio di gomma nera"
+                width="800"
+                height="1067"
+                loading="lazy"
+              />
+              <figcaption>L'uncinetto applicato alla gomma</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <img
+                src="/assets/studio-04.webp"
+                alt="Dettaglio di un intreccio a uncinetto fatto con strisce di gomma nera"
+                width="800"
+                height="1067"
+                loading="lazy"
+              />
+              <figcaption>Dettaglio dell'intreccio</figcaption>
+            </figure>
+          </li>
+        </ul>
       </section>
 
       <section class="cv-section" aria-labelledby="formazione">
         <h2 id="formazione">Formazione</h2>
         <ol class="timeline" role="list">
           <li>
-            <time datetime="2014">2014</time>
+            <time datetime="2025">2025</time>
             <div>
-              <strong>Diploma accademico in Scultura</strong>
-              <span>Accademia di Belle Arti di Carrara [PLACEHOLDER]</span>
-              <p>Tesi sulla figura umana nel marmo, tra tradizione classica e forma essenziale.</p>
+              <strong>Laurea in Scultura</strong>
+              <span>Accademia di Belle Arti di Napoli</span>
             </div>
           </li>
           <li>
-            <time datetime="2011">2011</time>
+            <time datetime="2022">2022</time>
             <div>
-              <strong>Corso di fonderia artistica</strong>
-              <span>Pietrasanta [PLACEHOLDER]</span>
-              <p>Tre mesi sulla fusione a cera persa, dal modello in cera alla patinatura.</p>
-            </div>
-          </li>
-          <li>
-            <time datetime="2009">2009</time>
-            <div>
-              <strong>Diploma di liceo artistico</strong>
-              <span>Firenze [PLACEHOLDER]</span>
-              <p>Indirizzo arti figurative, con i primi lavori in argilla e gesso.</p>
+              <strong>Magma Vivo, workshop</strong>
+              <span>Accademia di Belle Arti di Napoli</span>
             </div>
           </li>
         </ol>
       </section>
 
       <section class="cv-section" aria-labelledby="mostre">
-        <h2 id="mostre">Mostre</h2>
+        <h2 id="mostre">Mostre collettive</h2>
         <ol class="timeline" role="list">
           <li>
-            <time datetime="2025">2025</time>
+            <time datetime="2024">2024</time>
             <div>
-              <strong>Materia e silenzio, personale</strong>
-              <span>Milano [PLACEHOLDER]</span>
-              <p>Dodici sculture in marmo e bronzo sul tema del limite e della soglia.</p>
+              <strong>In media res</strong>
+              <span>Giardini esterni dell'Accademia di Belle Arti di Napoli</span>
+              <p>A cura di Kim-Sara Nãgele.</p>
             </div>
           </li>
           <li>
             <time datetime="2023">2023</time>
             <div>
-              <strong>Forme del tempo, collettiva</strong>
-              <span>Lucca [PLACEHOLDER]</span>
-              <p>Cinque artisti a confronto sul rapporto tra materia e memoria.</p>
+              <strong>Avantgarde</strong>
+              <span>Chiostro SS. Pietà, Teggiano</span>
+              <p>A cura del Dipartimento di Scultura dell'Accademia di Belle Arti di Napoli.</p>
+            </div>
+          </li>
+          <li>
+            <time datetime="2023">2023</time>
+            <div>
+              <strong>Magma Vivo</strong>
+              <span>Macellum, Pozzuoli</span>
+              <p>
+                A cura del Dipartimento di Scultura dell'Accademia di Belle Arti di Napoli, in
+                collaborazione con l'artista Aoki Noe.
+              </p>
             </div>
           </li>
           <li>
             <time datetime="2021">2021</time>
             <div>
-              <strong>Terre, personale</strong>
-              <span>Bologna [PLACEHOLDER]</span>
-              <p>Una serie di figure in terracotta patinata, esposte per la prima volta.</p>
+              <strong>Dantedì 700' anni</strong>
+              <span>Bacoli</span>
+              <p>A cura dell'ISIS Emilio Sereni, Scuola Cardito.</p>
             </div>
           </li>
           <li>
-            <time datetime="2019">2019</time>
+            <time datetime="2020">2020</time>
             <div>
-              <strong>Giovani scultori, collettiva</strong>
-              <span>Pietrasanta [PLACEHOLDER]</span>
-              <p>La prima mostra, con due opere in pietra serena.</p>
+              <strong>Sereni atelier creativi</strong>
+              <span>Mostra online</span>
+              <p>A cura dell'ISIS Emilio Sereni, Scuola Cardito.</p>
             </div>
           </li>
         </ol>
       </section>
 
-      <section class="cv-section" aria-labelledby="premi">
-        <h2 id="premi">Premi</h2>
+      <section class="cv-section" aria-labelledby="residenze">
+        <h2 id="residenze">Residenze artistiche</h2>
         <ol class="timeline" role="list">
           <li>
-            <time datetime="2024">2024</time>
+            <time datetime="2023">2023</time>
             <div>
-              <strong>Premio nazionale di scultura</strong>
-              <span>Roma [PLACEHOLDER]</span>
-              <p>Primo premio per l'opera in bronzo Respiro trattenuto.</p>
-            </div>
-          </li>
-          <li>
-            <time datetime="2022">2022</time>
-            <div>
-              <strong>Menzione speciale della giuria</strong>
-              <span>Carrara [PLACEHOLDER]</span>
-              <p>Concorso internazionale di scultura in marmo, sezione giovani.</p>
-            </div>
-          </li>
-          <li>
-            <time datetime="2018">2018</time>
-            <div>
-              <strong>Borsa di studio per giovani artisti</strong>
-              <span>Torino [PLACEHOLDER]</span>
-              <p>Un anno di residenza in uno studio condiviso per la scultura.</p>
+              <strong>Majella Sculpture Week</strong>
+              <span>Lettomanoppello</span>
+              <p>A cura della Bottega scuola «La BOBBA».</p>
             </div>
           </li>
         </ol>

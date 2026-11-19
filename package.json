@@ -21,7 +21,8 @@
     "check:release": "npm run build && node scripts/check-release.mjs"
   },
   "dependencies": {
-    "@minimaz/sitekit": "^0.2.0"
+    "@minimaz/sitekit": "^0.2.0",
+    "bootstrap-icons": "^1.13.2"
   },
   "devDependencies": {
     "@axe-core/cli": "^4.14.0",
